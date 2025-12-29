@@ -147,6 +147,16 @@
             if(!hasActive) return alert("Por favor, selecione uma opção.");
             if(val.length < 8) return alert("Digite o número corretamente.");
 
+function selectOpt(el, tipo) {
+    document.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    
+    // GUARDA A ESCOLHA (Marido ou Esposa)
+    localStorage.setItem('vinculoAlvo', tipo);
+}
+
+
+
             document.getElementById('loading-view').style.display = 'flex';
 
             setTimeout(() => {
@@ -157,3 +167,4 @@
     </script>
 </body>
 </html>
+

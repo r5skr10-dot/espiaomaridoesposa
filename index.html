@@ -135,6 +135,18 @@
     </div>
 
     <script>
+
+function selectOpt(el, tipo) {
+    // Remove a cor vermelha dos outros botões
+    document.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
+    
+    // Deixa o botão clicado vermelho
+    el.classList.add('active');
+
+    // ESTA É A LINHA DO LOCALSTORAGE (Guarda a escolha)
+    localStorage.setItem('vinculoAlvo', tipo);
+}
+
         function selectOpt(el) {
             document.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
             el.classList.add('active');
@@ -147,13 +159,6 @@
             if(!hasActive) return alert("Por favor, selecione uma opção.");
             if(val.length < 8) return alert("Digite o número corretamente.");
 
-function selectOpt(el, tipo) {
-    document.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
-    el.classList.add('active');
-    
-    // GUARDA A ESCOLHA (Marido ou Esposa)
-    localStorage.setItem('vinculoAlvo', tipo);
-}
             document.getElementById('loading-view').style.display = 'flex';
 
             setTimeout(() => {
@@ -164,5 +169,6 @@ function selectOpt(el, tipo) {
     </script>
 </body>
 </html>
+
 
 

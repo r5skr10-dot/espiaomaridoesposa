@@ -247,28 +247,26 @@ setInterval(() => {
 </script>
 
 <script>
-    // O site lê o que foi guardado. Se não achar nada, assume 'Marido' por padrão.
-    const escolhaDoUsuario = localStorage.getItem('vinculoAlvo');
+    // Esse código deve ficar no final da sua final.html
+    window.onload = function() {
+        const escolha = localStorage.getItem('vinculoAlvo');
+        const nome = document.getElementById('nome-contato');
+        const texto = document.getElementById('texto-mensagem');
 
-    const areaDaMensagem = document.getElementById('mensagem-dinamica');
-
-    if (escolhaDoUsuario === 'Esposa') {
-        // Se ele escolheu ESPOSA, mostra mensagem de amante homem
-        areaDaMensagem.innerHTML = `
-            <span class="contato">WhatsApp: Contato "Ricardinho"</span>
-            <p>"Pode vir, ela saiu. <span class="censura">Tô com saudade</span> do seu beijo..."</p>
-        `;
-    } else {
-        // Se ele escolheu MARIDO (ou se não escolheu nada), mostra mensagem de amante mulher
-        areaDaMensagem.innerHTML = `
-            <span class="contato">WhatsApp: Contato "Amante"</span>
-            <p>"Oi sumido, ele saiu? <span class="censura">Tô te esperando no Motel</span>..."</p>
-        `;
+        if (escolha === 'Esposa') {
+            nome.innerText = 'WhatsApp: Contato "Ricardinho"';
+            texto.innerHTML = 'Pode vir agora, ela já saiu. <span class="censura">Tô com muita saudade</span> do seu beijo...';
+        } else {
+            // Se for marido ou não tiver escolha, o padrão é esse:
+            nome.innerText = 'WhatsApp: Contato "Amante"';
+            texto.innerHTML = 'Oi sumido, ele já saiu? To te esperando <span class="censura">no Motel às 14h</span> pra gente...';
+        }
     }
 </script>
 
 
 </body>
 </html>
+
 
 

@@ -88,7 +88,7 @@ body{ background:var(--dark); color:var(--text); font-family:'Segoe UI', Roboto,
     </p>
 
     <div class="qr-placeholder">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=COLE_SEU_PIX_AQUI" width="140">
+        <img src="https://qrcode.png" width="140">
     </div>
 
     <div class="pix-code" id="pixKey">95a695a60332-ee2f-4252-8ba7-76162b4eec3e</div>
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         // Padrão para Marido ou se der erro de leitura
         nome.innerText = 'WhatsApp · Contato "Amante"';
-        texto.innerHTML = '"ontem foi gostoso ela já saiu de perto? To te esperando no <span class="censura"> Motel às 14h pra gente fazer </span> aquilo."';
+        texto.innerHTML = '"ontem foi <span class="censura">gostoso</span> ela já saiu de perto? To te esperando no <span class="censura"> Motel às 14h pra gente fazer </span> aquilo."';
     }
 });
 
@@ -153,5 +153,6 @@ setInterval(() => {
 
 </body>
 </html>
+
 
 
